@@ -1,18 +1,19 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <Home></Home>
+  <div id="app">  
+    <Login></Login>
   </div>
 </template>
 
 <script>
 
 import Home from './components/home/home.vue'
+import Login from './components/login/login.vue'
 
 export default {
   name: 'App',
   components: {
     Home,
+    Login
   }
 }
 </script>

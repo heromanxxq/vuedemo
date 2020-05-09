@@ -5,6 +5,11 @@ import 'vx-easyui/dist/themes/vue.css'
 import EasyUI from 'vx-easyui'
 Vue.use(EasyUI)
 
+// 使用ElementUI框架
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
+Vue.use(ElementUI)
+
 //import Vue from 'vue'
 import Vue from 'vue/dist/vue.esm.js'
 import App from './App.vue'
