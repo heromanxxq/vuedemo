@@ -2,8 +2,10 @@
 
 // 1. 定义 (路由) 组件。
 // 可以从其他文件 import 进来
-import App from '../App.vue'
 import VueRouter from 'vue-router'
+import App from '../App.vue'
+import Login from '../components/login/login.vue'
+import Home from '../components/home/home.vue'
 
 // 2. 定义路由
 // 每个路由应该映射一个组件。 其中"component" 可以是
@@ -11,7 +13,9 @@ import VueRouter from 'vue-router'
 // 或者，只是一个组件配置对象。
 // 我们晚点再讨论嵌套路由。
 const routes = [
-  { path: '/', component: App },
+  { path: '/', redirect: '/login' },
+  { path: '/home', component: Home, name: 'home' },
+  { path: '/login', component: Login},
 ]
 
 // 3. 创建 router 实例，然后传 `routes` 配置

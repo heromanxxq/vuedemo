@@ -52,7 +52,9 @@
     },
     methods:{
       doLogin(){//一点击登录按钮，这个方法就会执行
-        alert(JSON.stringify(this.user))//可以直接把this.user对象传给后端进行校验用户名和密码
+        //alert(JSON.stringify(this.user))//可以直接把this.user对象传给后端进行校验用户名和密码
+        //console.log(JSON.stringify(this.$router))
+        this.$router.push({ name: 'home' })
       },
       resetClick(){
           this.user.username = ''
