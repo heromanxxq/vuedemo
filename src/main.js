@@ -6,18 +6,24 @@ import EasyUI from 'vx-easyui'
 Vue.use(EasyUI)
 
 // 使用ElementUI框架
-import ElementUI from 'element-ui'
-import 'element-ui/lib/theme-chalk/index.css'
-Vue.use(ElementUI)
+// import ElementUI from 'element-ui'
+// import 'element-ui/lib/theme-chalk/index.css'
+// Vue.use(ElementUI)
 
 //import Vue from 'vue'
 import Vue from 'vue/dist/vue.esm.js'
 import App from './App.vue'
 
+// 使用vue-router
+import VueRouter from 'vue-router'
+Vue.use(VueRouter)
+
+import router from './router/index.js'
 
 
 Vue.config.productionTip = false
 
 new Vue({
   render: h => h(App),
+  router
 }).$mount('#app') 
