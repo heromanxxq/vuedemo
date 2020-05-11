@@ -8,12 +8,14 @@
 
 import Home from './components/home/home.vue'
 import Login from './components/login/login.vue'
+import Homenew from './components/home/homenew.vue'
 
 export default {
   name: 'App',
   components: {
     Home,
-    Login
+    Login,
+    Homenew
   },
   data() {
     return {

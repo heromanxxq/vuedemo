@@ -6,6 +6,8 @@ import VueRouter from 'vue-router'
 import App from '../App.vue'
 import Login from '../components/login/login.vue'
 import Home from '../components/home/home.vue'
+import Homenew from '../components/home/homenew.vue'
+
 
 // 2. 定义路由
 // 每个路由应该映射一个组件。 其中"component" 可以是
@@ -14,7 +16,7 @@ import Home from '../components/home/home.vue'
 // 我们晚点再讨论嵌套路由。
 const routes = [
   { path: '/', redirect: '/login' },
-  { path: '/home', component: Home, name: 'home' },
+  { path: '/home', component: Homenew, name: 'home' },
   { path: '/login', component: Login},
 ]
 

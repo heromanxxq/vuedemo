@@ -101,7 +101,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 80px;
+  height: 100px;
 }
 
 .title-zh{
@@ -116,7 +116,7 @@
 }
 
 .login-form{
-  height: 220px;
+  height: 200px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -136,14 +136,16 @@
 }
 .label-username{
   letter-spacing: 3px;
+  color: #0074a6;
 }
 .label-password{
   letter-spacing: 8px;
+  color: #0074a6;
 }
 .login-input{
   height: 30px;
   width: 200px;
-  border: 0.5px solid#2c3e50;
+  border: 0.5px solid#0074a6;
 }
 
 .login-anniu{
