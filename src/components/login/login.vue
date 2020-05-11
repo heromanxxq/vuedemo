@@ -65,7 +65,7 @@
 </script>
 
 <style>
-    body{
+body{
 	font-size:12px;
 	font-family:Verdana, Geneva, sans-serif;
 	line-height:23px;
@@ -73,7 +73,7 @@
 	padding:0;
 	background:url(../../assets/images/login/login_bg.jpg);
 	color:#3b6e81;
-	}
+}
 .second_body{
 	margin-left: 40%;	
 	height:343px;

@@ -1,18 +1,13 @@
+//import Vue from 'vue'
+import Vue from 'vue/dist/vue.esm.js'
+import App from './App.vue'
+
 // 使用easyui框架
 import 'vx-easyui/dist/themes/default/easyui.css'
 import 'vx-easyui/dist/themes/icon.css'
 import 'vx-easyui/dist/themes/vue.css'
 import EasyUI from 'vx-easyui'
 Vue.use(EasyUI)
-
-// 使用ElementUI框架
-// import ElementUI from 'element-ui'
-// import 'element-ui/lib/theme-chalk/index.css'
-// Vue.use(ElementUI)
-
-//import Vue from 'vue'
-import Vue from 'vue/dist/vue.esm.js'
-import App from './App.vue'
 
 // 使用vue-router
 import VueRouter from 'vue-router'
