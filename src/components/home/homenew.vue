@@ -33,7 +33,7 @@ export default {
             app:{
                 title: 'app后端管理系统',
                 engtitle: 'Enterprise Information Manage System',
-                logourl: '../../assets/images/login/login1.jpg'
+                logourl: '../../assets/images/home/logo.png' 
             }
         }
     },
