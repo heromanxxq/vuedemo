@@ -1,5 +1,5 @@
 <template>
-  <div id="app">  
+  <div id="app" :style="{height: height+'px'}">  
     <router-view></router-view>
   </div>
 </template>
@@ -14,7 +14,13 @@ export default {
   components: {
     Home,
     Login
-  }
+  },
+  data() {
+    return {
+      height: `${document.documentElement.clientHeight}`,
+    }
+  },
+  
 }
 </script>
 
@@ -25,5 +31,9 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  width: 100vw;
+}
+body{
+  margin: 0;
 }
 </style>

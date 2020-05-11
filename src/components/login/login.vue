@@ -1,33 +1,30 @@
 <template>
-    <div>
-        <div class="second_body">
-    	    <div class="logo"></div>
-            <div class="title-zh">APP后端管理系统</div>
-            <div class="title-en" style="">Enterprise Information Manage System</div>
-            <div class="message" data-bind="html:message"></div>
-            <table border="0" style="width:300px;margin-top:30px;">
-            	<tr>
-                	<td style="white-space:nowrap; padding-bottom: 5px;width:55px;">用户名：</td>
-                    <td colspan="2"><input type="text" id="userCode" class="login" v-model="user.username" /></td>
-                </tr>
-                <tr>
-                    <td class="lable" style="white-space:nowrap; letter-spacing: 0.5em; vertical-align: middle">密码：</td>
-                    <td colspan="2"><input type="password" id="password" class="login" v-model="user.password" /></td>
-                </tr>
-                <!--
-                <tr>
-                    <td></td>
-                    <td colspan="2"><input type="checkbox" v-model="remember" /><span>系统记住我</span></td>
-                </tr> 
-                -->
-                <tr>
-                    <td colspan="3" style="text-align:center;">
-                        <input type="submit" value="登录" class="login_button" @click="doLogin"/>
-                        <input type="button" value="重置" class="reset_botton" @click="resetClick" />
-                    </td>
-                </tr>
-            </table>
+  <div class="loginb" :style="{height:height+'px'}">
+    <div class="second_body">
+      <div class="login-left">
+      
+      </div>
+      <div class="login-right">
+        <div class="header">
+          <div class="title-zh">{{app.title}}</div>
+          <div class="title-en" style="">{{app.engtitle}}</div>
         </div>
+        <div class="login-form">
+          <div class="username">
+            <label for="" class="label-username">用户名：</label>
+            <input class="easyui-textbox login-input" type="text"  data-options="iconCls:'icon-search'" style="" v-model="user.username">
+          </div>
+          <div class="password">
+            <label for="" class="label-password">密码：</label>
+            <input class="easyui-textbox login-input" type="password" data-options="iconCls:'icon-search'" style="" v-model="user.password">
+          </div>
+          <div class="login-anniu">
+            <input type="submit" value="登录" class="login_button" @click="doLogin"/>
+            <input type="button" value="重置" class="reset_botton" @click="resetClick" />
+          </div>
+        </div>
+      </div>
+    </div>  
   </div>
 </template>
 <script>
@@ -47,7 +44,13 @@
           password:'123',
           //为了登录方便，可以直接在这里写好用户名和密码的值
         },
-        remember: false
+        remember: false,
+        height: `${document.documentElement.clientHeight}`,
+        app:{
+          title: 'app后端管理系统',
+          engtitle: 'Enterprise Information Manage System',
+          logo: '../../assets/images/login/login1.jpg'
+        }
       }
     },
     methods:{
@@ -65,7 +68,7 @@
 </script>
 
 <style>
-body{
+.loginb{
 	font-size:12px;
 	font-family:Verdana, Geneva, sans-serif;
 	line-height:23px;
@@ -73,59 +76,79 @@ body{
 	padding:0;
 	background:url(../../assets/images/login/login_bg.jpg);
 	color:#3b6e81;
+  
 }
-.second_body{
-	margin-left: 40%;	
-	height:343px;
-	margin-top:10%;
-	padding-left:300px;
-	padding-top:110px;
+.second_body{		
 	background:url(../../assets/images/login/login_panel.png) no-repeat;
-    position:relative;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  width: 45%;
+  height: 300px;
+  border-radius: 15px;
+  display: flex;
+}
+.login-left{
+  width: 35%;
+}
+.login-right{
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+}
+.header{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 80px;
 }
 
-.title-zh
-{
-    position:absolute;
-    top:50px;
-    left:320px;
-    font-size:26px;
-    font-weight:900;
-    color:#0074a6;
+.title-zh{
+  font-size:26px;
+  font-weight:900;
+  color:#0074a6;    
 }
 
-.title-en
-{
-    position:absolute;
-    top:70px;
-    left:312px;
+.title-en{
     color:#9aa5a9;
+    margin-top: 5px;
 }
 
- .message
-{   
-    position:absolute;
-    bottom:80px;
-    left:312px;
-    color:red;
+.login-form{
+  height: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.username{
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  margin-top: 5px;
+  margin-left: -10%;
+}
+.password{
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  margin-left: -10%;
+}
+.label-username{
+  letter-spacing: 3px;
+}
+.label-password{
+  letter-spacing: 8px;
+}
+.login-input{
+  height: 30px;
+  width: 200px;
+  border: 0.5px solid#2c3e50;
 }
 
-.logo
-{
-     position:absolute;
-     left:50px;
-     top:80px;
+.login-anniu{
+  margin-top: 20px;
 }
-
-.login,.login2{
-	width:200px;
-	border:1px solid #7fb5c1;
-	height:22px;
-	vertical-align:text-bottom;
-	}
-.login2{
-	width:125px;
-	}
 .login_button,.reset_botton{
 	width:58px;
 	height:26px;
@@ -136,6 +159,7 @@ body{
 	background:url(../../assets/images/login/login1.jpg);
 	margin-left:15px;
 	}
+
 .reset_botton{
 	background:url(../../assets/images/login/reset.jpg);
 	}
